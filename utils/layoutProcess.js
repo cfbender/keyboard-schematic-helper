@@ -8,7 +8,6 @@ function getCols(keymap) {
 
     totalCols = col > totalCols ? col : totalCols;
   });
-  console.log(totalCols);
   return totalCols;
 }
 
@@ -17,16 +16,20 @@ function makeGrid(keymap) {
   let lastRow = 0;
   let tempArr = [];
 
-  keymap.forEach(key => {
+  console.log(keymap);
+  keymap.forEach((key, idx) => {
     let row = key[1];
-
     if (row > lastRow) {
-      lastRow = row;
+      lastRow = parseInt(row, 16);
       result.push(Array.from(new Set(tempArr)));
       tempArr = [];
     }
 
     tempArr.push(key);
+
+    if (idx === keymap.length - 1) {
+      result.push(Array.from(new Set(tempArr)));
+    }
   });
 
   return result;
