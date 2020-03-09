@@ -16,7 +16,6 @@ function makeGrid(keymap) {
   let lastRow = 0;
   let tempArr = [];
 
-  console.log(keymap);
   keymap.forEach((key, idx) => {
     let row = key[1];
     if (row > lastRow) {
