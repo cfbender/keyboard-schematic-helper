@@ -17,9 +17,9 @@ function makeGrid(keymap) {
   let tempArr = [];
 
   keymap.forEach((key, idx) => {
-    let row = key[1];
+    let row = parseInt(key[1], 16);
     if (row > lastRow) {
-      lastRow = parseInt(row, 16);
+      lastRow = row;
       result.push(Array.from(new Set(tempArr)));
       tempArr = [];
     }
@@ -66,7 +66,7 @@ function fillGrid(keyGrid, cols) {
 }
 
 export function layoutProcess(str) {
-  const matches = str.match(/(K[0-9a-fA-F]{2})/gm);
+  const matches = str.match(/(K[0-9A-F]{2})/gim);
   if (matches === null) {
     return false;
   }
