@@ -4,12 +4,12 @@ function getCols(keymap) {
   let totalCols = 0;
 
   keymap.forEach(key => {
-    let col = key[2];
+    let col = parseInt(key[2], 16);
 
     totalCols = col > totalCols ? col : totalCols;
   });
-
-  return parseInt(totalCols);
+  console.log(totalCols);
+  return totalCols;
 }
 
 function makeGrid(keymap) {
@@ -42,13 +42,13 @@ function fillGrid(keyGrid, cols) {
       let temp = [];
       let expectedCol = 0;
       row.forEach(key => {
-        let difference = key[2] - expectedCol;
+        let difference = parseInt(key[2], 16) - expectedCol;
         if (difference > 0) {
           let filler = new Array(difference);
           temp.push(...filler.fill("_x_"));
         }
         temp.push(key);
-        expectedCol = parseInt(key[2]) + 1;
+        expectedCol = parseInt(key[2], 16) + 1;
       });
 
       if (temp.length < cols + 1) {
@@ -64,7 +64,7 @@ function fillGrid(keyGrid, cols) {
 }
 
 export function layoutProcess(str) {
-  const matches = str.match(/(K[0-9]{2})/gm);
+  const matches = str.match(/(K[0-9a-fA-F]{2})/gm);
   if (matches === null) {
     return false;
   }
