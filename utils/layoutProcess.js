@@ -22,7 +22,7 @@ function makeGrid(keymap) {
 
     if (row > lastRow) {
       lastRow = row;
-      result.push(tempArr);
+      result.push(Array.from(new Set(tempArr)));
       tempArr = [];
     }
 
