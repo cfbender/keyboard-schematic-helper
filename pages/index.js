@@ -16,6 +16,13 @@ const index = () => {
           href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
           rel="stylesheet"
         />
+
+        <title>Keyboard Schematic Helper</title>
+
+        <meta
+          name="description"
+          content="Ports QMK physical layout of keycodes to 2D array grid of keycodes"
+        />
       </Head>
       <p className="text-center mt-5" id="hero-text">
         Paste keycodes in K[row][column] format. Will return a sorted grid with
