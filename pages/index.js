@@ -26,7 +26,7 @@ const index = () => {
       </Head>
       <p className="text-center mt-5" id="hero-text">
         Paste keycodes in K[row][column] format. Will return a sorted grid with
-        _x_ where no switch exists.
+        <code>XXX</code> where no switch exists.
       </p>
       <App />
       <style jsx global>
