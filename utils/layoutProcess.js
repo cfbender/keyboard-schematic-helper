@@ -47,7 +47,7 @@ function fillGrid(keyGrid, cols) {
         let difference = parseInt(key[2], 16) - expectedCol;
         if (difference > 0) {
           let filler = new Array(difference);
-          temp.push(...filler.fill("_x_"));
+          temp.push(...filler.fill("XXX"));
         }
         temp.push(key);
         expectedCol = parseInt(key[2], 16) + 1;
@@ -56,7 +56,7 @@ function fillGrid(keyGrid, cols) {
       if (temp.length < cols + 1) {
         let difference = cols + 1 - temp.length;
         let filler = new Array(difference);
-        temp.push(...filler.fill("_x_"));
+        temp.push(...filler.fill("XXX"));
       }
       result.push(temp);
     }
