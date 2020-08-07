@@ -1,10 +1,11 @@
 // puts in line breaks after rows, inserts blank spots where no switch exists, returns multiline string
+const numericalBase = 36
 
 function getCols(keymap) {
   let totalCols = 0;
 
   keymap.forEach(key => {
-    let col = parseInt(key[2], 16);
+    let col = parseInt(key[2], numericalBase);
 
     totalCols = col > totalCols ? col : totalCols;
   });
@@ -17,7 +18,7 @@ function makeGrid(keymap) {
   let tempArr = [];
 
   keymap.forEach((key, idx) => {
-    let row = parseInt(key[1], 16);
+    let row = parseInt(key[1], numericalBase);
     if (row > lastRow) {
       lastRow = row;
       result.push(Array.from(new Set(tempArr)));
@@ -44,13 +45,13 @@ function fillGrid(keyGrid, cols) {
       let temp = [];
       let expectedCol = 0;
       row.forEach(key => {
-        let difference = parseInt(key[2], 16) - expectedCol;
+        let difference = parseInt(key[2], numericalBase) - expectedCol;
         if (difference > 0) {
           let filler = new Array(difference);
           temp.push(...filler.fill("XXX"));
         }
         temp.push(key);
-        expectedCol = parseInt(key[2], 16) + 1;
+        expectedCol = parseInt(key[2], numericalBase) + 1;
       });
 
       if (temp.length < cols + 1) {
