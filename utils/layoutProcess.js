@@ -67,7 +67,7 @@ function fillGrid(keyGrid, cols) {
 }
 
 export function layoutProcess(str) {
-  const matches = str.match(/(K[0-9A-F]{2})/gim);
+  const matches = str.match(/(K[0-9A-Z]{2})/gim);
   if (matches === null) {
     return false;
   }
