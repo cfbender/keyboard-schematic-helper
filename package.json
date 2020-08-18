@@ -7,13 +7,12 @@
     "dev": "next",
     "build": "next build",
     "start": "next start"
-  }
-  ,
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^9.3.2",
+    "next": "^9.5.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   }
