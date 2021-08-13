@@ -1,4 +1,3 @@
-import React from "react";
 import App from "../components/App";
 import Head from "next/head";
 
@@ -10,7 +9,7 @@ const index = () => {
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         <link
           href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
@@ -25,7 +24,8 @@ const index = () => {
         />
       </Head>
       <p className="text-center mt-5" id="hero-text">
-        Paste keycodes in K[row][column] format. Will return a sorted grid with <code>XXX</code> where no switch exists.
+        Paste keycodes in K[row][column] format. Will return a sorted grid with{" "}
+        <code>XXX</code> where no switch exists.
       </p>
       <App />
       <style jsx global>

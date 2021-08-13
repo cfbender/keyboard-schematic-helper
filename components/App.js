@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { layoutProcess } from "../utils/layoutProcess";
 
 function debounce(fn, time) {
   let timeoutId;
 
-  return function() {
+  return function () {
     // Check for existing calls
     if (timeoutId) {
       clearTimeout(timeoutId);
@@ -23,7 +23,7 @@ const App = () => {
   const [inputText, updateInputText] = useState("");
   const [outputText, updateOutputText] = useState([]);
 
-  const processText = newStr => {
+  const processText = (newStr) => {
     const processed = layoutProcess(newStr);
     updateOutputText(processed);
   };
@@ -38,7 +38,7 @@ const App = () => {
           cols="75"
           id="layout-string"
           value={inputText}
-          onChange={e => {
+          onChange={(e) => {
             updateInputText(`${e.target.value}`);
             debouncedProcess(e.target.value);
           }}
